@@ -22,6 +22,7 @@
       axios.get(`https://reqres.in/api/users/${userId}`)
         .then(response => {
           this.user = response.data.data;
+          console.log(response.data.data)
         })
         .catch(error => {
           console.error(error);

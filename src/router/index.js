@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+
 import Create from '../views/Create.vue'
 import Detail from '../views/Detail.vue'
 import Update from '../views/Update.vue'

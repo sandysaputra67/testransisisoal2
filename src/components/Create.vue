@@ -9,6 +9,7 @@
         <label for="email">Email:</label>
         <input type="email" v-model="newUser.email" required>
         <button class="btn btn-light" @click="$router.push('/')">Create</button>
+
       </form>
     </div>
   </template>
@@ -22,7 +23,7 @@
         newUser: {
           first_name: '',
           last_name: '',
-          email: ''
+          email: '',
         }
       };
     },
@@ -37,10 +38,9 @@
             console.error(error);
             // Handle error
           });
+         
       }
     }
   };
   </script>
-  <style>
-
-</style>
+  
