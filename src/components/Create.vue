@@ -36,7 +36,9 @@
         // Handle success
 
         // Optionally, you can redirect to another route after successful user creation
-        this.$router.push('/detail');
+        if (this.$route.path !== '/detail') {
+  this.$router.push('/detail');
+}
       } catch (error) {
         console.error('An error occurred:', error);
         // Handle error
