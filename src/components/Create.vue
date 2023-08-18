@@ -8,7 +8,7 @@
         <input type="text" v-model="newUser.last_name" required>
         <label for="email">Email:</label>
         <input type="email" v-model="newUser.email" required>
-        <button class="btn btn-light" @click="$router.push('/')">Create</button>
+        <button class="btn btn-light">Create</button>
 
       </form>
     </div>
@@ -28,19 +28,21 @@
       };
     },
     methods: {
-      createUser() {
-        axios.post('https://reqres.in/api/users', this.newUser)
-          .then(response => {
-            console.log('User created:', response.data);
-            // Handle success
-          })
-          .catch(error => {
-            console.error(error);
-            // Handle error
-          });
-         
+      async createUser() {
+      try {
+        const response = await axios.post('https://reqres.in/api/users', this.newUser);
+
+        console.log('User created:', response.data);
+        // Handle success
+
+        // Optionally, you can redirect to another route after successful user creation
+        this.$router.push('/detail');
+      } catch (error) {
+        console.error('An error occurred:', error);
+        // Handle error
       }
-    }
-  };
+    },
+  }
+};
   </script>
   
